@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>protective Gear - MAESTROPLUS</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">HOME </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Cricket Bats</a>
+            <a href="skills.html">Cricket Balls</a>
+            <a href="education.html" class="active">Protective Gear</a>
+            <a href="experience.html">Accessories</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home education-home">
+        <model-viewer id="threedd" src="models/cricket_helmet.glb" autoplay camera-controls >
+        </model-viewer>
+        <style>
+            #threedd{
+              width: 300px;
+              height: 400px;
+          
+          }
+          </style>
+        <div class="home-content">
+            <h1>Our <span>Protective Gear</span></h1>
+            <h3 class="typing-text">Protective Gear di kami </h3>
+            <p>
+                Banyak pilihan untuk memilih Protective Gear dari kami, mulai dari helmet, glove, pads, dan lain sebagainya.
+            </p>
+            <div class="btn-container">
+                <a href="#education-list" class="btn">Pelajari Lebih Lanjut</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="education-list" class="education">
+        <h2>Protective Gear Kami</h2>
+        <div class="education-container">
+            <div class="education-item">
+                <i class="fa-solid fa-cricket-bat-ball"></i>
+                <h3>Helmet</h3>
+                <p>Helmet dari kami dirancang dengan standar yang cukup baik, dimana terdapat busa yang ringan dan nyaman, serta hardcover yang cukup memadai.</p>
+            </div>
+            <div class="education-item">
+                <i class="fa-solid fa-cricket-bat-ball"></i>
+                <h3>Glove</h3>
+                <p>Sarung tangan modern dirancang sedemikian rupa sehingga memberikan perlindungan paling banyak, dalam bentuk area empuk di setiap jari, sekaligus ringan agar tidak menimbulkan ketidaknyamanan dalam memegang pemukul.</p>
+            </div>
+            <div class="education-item">
+                <i class="fa-solid fa-cricket-bat-ball"></i>
+                <h3>Pads</h3>
+                <p>pads ini terbuat dari beberapa bahan yang ringan, kepadatan tinggi dan bahan tahan lama lainnya. Mereka menutupi dari atas lutut ke kaki, dengan tali untuk menjaganya tetap aman selama bermain. Kenyamanan dan fleksibilitas sangat penting, memungkinkan gerakan bebas saat anda menggunakannya</p>
+            </div>
+            <div class="education-item">
+                <i class="fa-solid fa-cricket-bat-ball"></i>
+                <h3>Box</h3>
+                <p>Box adalah salah satu peralatan terpenting yang harus digunakan oleh pemukul; Ini tersedia dalam berbagai bentuk dan ukuran, dan dirancang secara ergonomis. Hari-hari ini bahkan dilengkapi dengan ventilasi yang sesuai.</p>
+            </div>
+            <div class="education-item">
+                <i class="fa-solid fa-cricket-bat-ball"></i>
+                <h3>thigh Pad</h3>
+                <p>Peralatan ringan yang dikenakan di bagian luar benda di sisi yang terkena bowler, untuk perlindungan terhadap bola yang tetap rendah dan berpotensi menyebabkan cedera atau memar, terutama saat datang dengan kecepatan cepat. Dua tali, satu di pinggang, dan satu di sekitar paha bagian dalam, tahan pelindung di tempatnya</p>
+            </div>
+        </div>
+        <a href="experience.html" class="btn">Selanjutnya</a>
+    </section>
+    <script>
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(0, 0, 0, 0.8)'; /* Kurangi transparansi */
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)'; /* Tambahkan bayangan */
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.5)'; /* Transparansi awal */
+                header.style.boxShadow = 'none';
+            }
+        });
+      </script>
+</body>
+</html>

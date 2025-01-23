@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact - MAESTROPLUS</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">HOME</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Cricket Bats</a>
+            <a href="skills.html">Cricket Balls</a>
+            <a href="education.html">Protective Gear</a>
+            <a href="experience.html">Accessories</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home contact-home">
+        <div class="home-content">
+            <h1>Get in <span>Touch</span></h1>
+            <h3 class="typing-text">Hubungi Kami di MAESTRO+</h3>
+            <p>
+                Kami senang mendengar dari Anda! Hubungi kami melalui salah satu saluran di bawah ini untuk informasi lebih lanjut, pendaftaran, atau pertanyaan lainnya.
+            </p>
+            <div class="btn-container">
+                <a href="#contact-form" class="btn">Hubungi Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-form" class="contact">
+        <h2>Kontak Kami</h2>
+        <div class="contact-container">
+            <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <h3>Telepon</h3>
+                <p>+60173979099</p>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <h3>Email</h3>
+                <p>maestroplus.indonesia@gmail.com</p>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-map-marker-alt"></i>
+                <h3>Alamat</h3>
+                <p>klik dibawah ini!!</p>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.5396153335787!2d112.6819946!3d-7.5159642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7df128678b295%3A0xe22a383db1664786!2sMaestro%2B%20Cricket%20Indonesia!5e0!3m2!1sid!2sid!4v1737553726603!5m2!1sid!2sid" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>            
+
+            <div class="contact-form">
+                <h3>Hubungi Disini!!</h3>
+                <div class="input-group">
+                </div>
+            
+                <!-- Form Kirim Pesan -->
+                <form id="pesan-form" name="DATA PESAN MAESTROPLUS" method="POST" action="https://script.google.com/macros/s/AKfycbwiEI8jeoUi6CZLIRM-G2Y5xIT9jzbbD5a_ZXsSC_DuAZfTHm0m2si1MDA4UkCV240w/exec">
+                    <div class="input-group">
+                        <label for="name">Nama</label>
+                        <input type="text" id="name" name="nama" placeholder="Nama Anda" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email Anda" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" name="pesan" placeholder="Tulis pesan Anda di sini" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Kirim Pesan</button>
+                    
+                </form>
+                <script>
+                    //data pesan
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwiEI8jeoUi6CZLIRM-G2Y5xIT9jzbbD5a_ZXsSC_DuAZfTHm0m2si1MDA4UkCV240w/exec'; // Ganti dengan URL Web App Anda
+const form = document.getElementById('DATA PESAN');
+const responseMessage = document.getElementById('responseMessage');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    // Mengirim data ke Web App
+    fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify({
+            name: formData.get('nama'),
+            email: formData.get('email'),
+            message: formData.get('pesan'),
+        }),
+        headers: { 'Content-Type': 'application/json' },
+    })
+    .then((response) => response.json())
+        .then((data) => {
+            if (data.status === 'success') {
+                // Tampilkan pesan sukses
+                responseMessage.style.color = "green";
+                responseMessage.textContent = "Your message has been sent successfully!";
+                form.reset(); // Reset form setelah pengiriman berhasil
+            } else {
+                // Tampilkan pesan error dari backend
+                responseMessage.style.color = "red";
+                responseMessage.textContent = "Failed to send message. Please try again.";
+            }
+        })
+        .catch((error) => {
+            // Tangani error jaringan atau lainnya
+            responseMessage.style.color = "red";
+            responseMessage.textContent = "Something went wrong. Please try again.";
+            console.error('Error:', error);
+        });
+});
+                </script>
+    </section>
+
+    <script>
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(0, 0, 0, 0.8)'; /* Kurangi transparansi */
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)'; /* Tambahkan bayangan */
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.5)'; /* Transparansi awal */
+                header.style.boxShadow = 'none';
+            }
+        });
+      </script>
+</body>
+</html>

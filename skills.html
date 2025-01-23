@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Balls Cricket - MAESTROPLUS</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">HOME </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Cricket Bats</a>
+            <a href="skills.html" class="active">Cricket Balls</a>
+            <a href="education.html">Protective Gear</a>
+            <a href="experience.html">Accessories</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="home skills-home">
+        <model-viewer id="threedd" src="models/cricket_ball.glb" autoplay camera-controls >
+        </model-viewer>
+        <style>
+            #threedd{
+              width: 300px;
+              height: 400px;
+          
+          }
+          </style>
+        <div class="home-content">
+            <h1>Our <span>Balls Cricket</span></h1>
+            <h3 class="typing-text">Keterampilan Kami di BSA</h3>
+            <p>
+                Di MAESTRO+ balls cricket ada beberapa tipe yang sesuai dengan tempat dan kegunaannya baik balls untuk match ataupun training
+            </p>
+            <div class="btn-container">
+                <a href="#skills-list" class="btn">Pelajari Lebih Lanjut</a>
+            </div>
+        </div>
+    </section>    
+    <section id="skills-list" class="skills">
+        <h2>Product Balls kami</h2>
+        <div class="skills-container">
+            <div class="skill-item">
+                <i class="fa-solid fa-cricket-bat-ball"></i>
+                <h3>Red Balls Cricket</h3>
+                <p>Bola merah adalah jenis bola kriket paling awal yang digunakan untuk dimainkan dalam cricket kompetitif dan paling sering digunakan dalam pertandingan kriket Tes dan Kelas Satu. Terbuat dari kulit berkualitas tinggi dan inti gabus keras yang dibungkus dengan lapisan tali yang dililit rapat.</p>
+            </div>
+            <div class="skill-item">
+                <i class="fa-solid fa-cricket-bat-ball"></i>
+                <h3>White Balls Cricket</h3>
+                <p>Balls ini diperkenalkan di World Series Cricket pada tahun 1977 di Australia. termasuk pertandingan internasional ODI (ODI) dan T20. Bola ini memiliki bahan yang sama dengan bola merah tetapi memiliki warna yang berbeda untuk meningkatkan visibilitas di bawah lampu sorot atau selama pertandingan siang-malam.</p>
+            </div>
+            <div class="skill-item">
+                <i class="fa-solid fa-cricket-bat-ball"></i>
+                <h3>training Balls Cricket</h3>
+                <p>Terdapat beberapa macam jenis dalam bola ini, baik bola yang terdapat tali, terbuat dari kulit sintetis, dan masih banyak tipe lagi</p>
+            </div>
+        </div>
+        <a href="education.html" class="btn">Selanjutnya</a>
+    </section>
+    <script>
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(0, 0, 0, 0.8)'; /* Kurangi transparansi */
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)'; /* Tambahkan bayangan */
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.5)'; /* Transparansi awal */
+                header.style.boxShadow = 'none';
+            }
+        });
+      </script>
+</body>
+</html>

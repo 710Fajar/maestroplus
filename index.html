@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MAESTROPLUS - MAKE YOUR GEAR UP">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>MAESTRO+ - Gear Up for Victory with Maestro+</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">WELCOME</a>
+        <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="services.html">Cricket Bats</a>
+            <a href="skills.html">Cricket Balls</a>
+            <a href="education.html">Protective Gear</a>
+            <a href="experience.html">Accessories</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="menu" id="menu" style="display: none;">
+            <a href="index.html" class="active">Home</a>
+            <a href="services.html">Cricket Bats</a>
+            <a href="skills.html">Cricket Balls</a>
+            <a href="education.html">Protective Gear</a>
+            <a href="experience.html">Accessories</a>
+            <a href="contact.html">Contact</a>
+        </div>
+                
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <a href="parallax.html">
+                <img src="main.png" alt="Gambar utama Bhirawa Swimming Aquatic" loading="lazy">
+            </a>
+        </div>        
+        <div class="home-content">
+            <h1>Hi, It's <span>MAESTRO Admin</span></h1>
+            <h3 class="typing-text">Kami Melayani <span></span></h3>
+            <p>Maestro+ adalah brand yang berdedikasi untuk menghadirkan alat olahraga cricket terbaik bagi para pemain profesional, amatir, dan penggemar olahraga cricket di seluruh dunia. Dengan semangat inovasi dan kualitas, kami menyediakan perlengkapan cricket yang dirancang untuk memberikan performa terbaik.
+                Kami percaya bahwa setiap pemain berhak mendapatkan perlengkapan yang mendukung permainan mereka, baik di lapangan lokal maupun di pertandingan profesional. Sejak awal, Maestro+ berkomitmen untuk menghadirkan keunggulan melalui produk-produk yang dirancang dengan presisi, bahan berkualitas tinggi, dan teknologi terkini.  
+                Bergabunglah dengan ribuan pemain cricket yang telah memilih Maestro+ untuk mendukung perjalanan mereka menuju kemenangan!</p>
+            </P>
+            <h4>KLIK ICON DIBAWAH INI!</h4>
+            <div class="social-icons">
+                <a href="https://wa.me/60173979099" target="_blank" aria-label="Hubungi kami di WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                <a href="#" target="_blank">
+                    <i class="fa-brands fa-tiktok"></i>
+                    <a href="https://id.shp.ee/DHFFWz3" target="_blank">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                <a href="https://www.instagram.com/maestroplus_?igsh=MWI2MjAwdjh4ZDVqaQ==" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+            <a href="services.html" class="btn">Selanjutnya</a>
+        </div>
+    </section>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+        
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(0, 0, 0, 0.8)'; /* Kurangi transparansi */
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)'; /* Tambahkan bayangan */
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.5)'; /* Transparansi awal */
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>        
+</body>
+</html>

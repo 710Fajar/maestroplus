@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>BATS MAESTRO+</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">HOME</a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="services.html" class="active">Cricket Bats</a>
+          <a href="skills.html">Cricket Balls</a>
+          <a href="education.html">Protective Gear</a>
+          <a href="experience.html">Accessories</a>
+          <a href="contact.html">Contact</a>
+      </nav>      
+    </header>
+
+    <section class="home services-home">
+        <model-viewer id="threedd" src="models/english-willow-bat.glb" autoplay camera-controls >
+        </model-viewer>
+        <style>
+        #threedd{
+          width: 500px;
+          height: 600px;
+      
+      }
+      </style>
+      <div class="home-content">
+          <h1>Our <span>Cricket Bats</span></h1>
+          <h3 class="typing-text">Kami Melayani<span></span></h3>
+          <p>
+            Di MAESTRO+ bats buat dari kayu willow pilihan, tersedia untuk pemain pemula hingga profesional.
+          </p>
+          <div class="btn-container">
+              <a href="#services-list" class="btn">Pelajari Lebih Lanjut</a>
+          </div>
+      </div>
+  </section>  
+    <section id="services-list" class="services">
+      <h2>bats kami</h2>
+      <div class="services-container">
+        <div class="service-item">
+            <i class="fa-solid fa-cricket-bat-ball"></i>
+            <h3>English Willow</h3>
+            <p>English willow adalah satu-satunya kayu yang disukai oleh sebagian besar pemain kriket di Cricket internasional. Karena setiap pemain kriket profesional ingin bermain dengan bats ini.</p>
+            </div>       
+    
+          <div class="service-item">
+              <i class="fa-solid fa-cricket-bat-ball"></i>
+              <h3>Kashmir Willow</h3>
+              <p>Willow Kashmir sebagian besar diminati kayu di India, yang digunakan untuk produksi bats cricket. bats kayu Kashmir berwarna kecoklatan karena ini kita dapat dengan mudah menemukan perbedaan antara pohon kayu Kashmir dan English.</p>
+          </div>
+          <div class="service-item">
+              <i class="fa-solid fa-cricket-bat-ball"></i>
+              <h3>Soft Cricket Bat</h3>
+              <p>Soft Bats cricket tidak digunakan dalam cricket internasional, bats cricket jenis ini tidak digunakan oleh pemain cricket profesional. Tetapi dengan harga lebih murah dari pohon willow Kashmir dan pohon willow Inggris.</p>
+          </div>
+          <div class="service-item">
+              <i class="fa-solid fa-cricket-bat-ball"></i>
+              <h3>Training Cricket Bat</h3>
+              <p>Bats cricket training sebagian besar digunakan sebagai peralatan cricket untuk meningkatkan keterampilan skill batting Anda. karena bats ini tidak terbuat dari satu willow tertentu agar cocok digunakan saat training.</p>
+          </div>
+          <div class="btn-container">
+        </div>        
+      </div>
+      <a href="skills.html" class="btn">Selanjutnya</a>
+  </section>
+  <script>
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.style.background = 'rgba(0, 0, 0, 0.8)'; /* Kurangi transparansi */
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)'; /* Tambahkan bayangan */
+        } else {
+            header.style.background = 'rgba(0, 0, 0, 0.5)'; /* Transparansi awal */
+            header.style.boxShadow = 'none';
+        }
+    });
+  </script>    
+</body>
+</html>

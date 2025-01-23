@@ -1,0 +1,1021 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh; /* Pastikan latar belakang mencakup seluruh tinggi layar */
+    overflow-x: hidden;
+    background: url('swimming-bg.jpg') no-repeat center center/cover, 
+                rgba(0, 0, 0, 0.5); /* Gambar dengan overlay transparan */
+    background-blend-mode: overlay; /* Mencampur warna dan gambar */
+    background-attachment: fixed; /* Latar belakang tetap saat scroll */
+    color: white; /* Warna teks */
+    font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+
+header {
+    position: sticky; /* Header tetap di atas */
+    top: 0; /* Posisi header */
+    left: 0;
+    z-index: 1000; /* Pastikan header ada di atas elemen lainnya */
+    width: 100%;
+    padding: 1rem 9%;
+    background: rgba(0, 0, 0, 0.5); /* Transparansi di atas gambar */
+    backdrop-filter: blur(10px); /* Blur latar belakang untuk efek kaca */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease; /* Animasi saat scroll */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Garis tipis bawah */
+}
+
+/* Efek hover pada logo */
+.logo {
+    font-size: 3rem;
+    color: #ffffff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Gaya untuk navigasi */
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffffff;
+    border-bottom: 3px solid #820000;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.menu {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.menu a {
+    margin: 10px 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    .menu a {
+        font-size: 1.5rem;
+        color:#fff
+    }
+}
+
+@media(max-width:768px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #820000;
+        border-bottom: 3px solid -#820000;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #820000;
+    }
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+    background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+}
+
+.home {
+    background-attachment: fixed;
+    position: relative; /* Make sure this container is positioned */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    z-index: 1;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;  /* Use viewport width for precise control */
+    min-height: 100vh; /* Use viewport height for precise control */
+    background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+    z-index: -1; /* Overlay berada di bawah konten */
+    
+}
+  
+.home .home-content h1{
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+span{
+    color: #820000;
+}
+
+.home-content h3{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p{
+    font-size: 1.3rem;
+    text-align:justify
+}
+
+.home-img{
+    border-radius: 50%;
+}
+
+.home-img img{
+    position: relative;
+    width: 32vw;
+    filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.459));
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #820000;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #820000;
+}
+
+.social-icons a:hover{
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #820000;
+    box-shadow: 0  0 25px #820000;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #820000;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #820000;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale3d(1.03);
+    background-color: #820000;
+    color: black;
+    box-shadow: 0 0 25px #820000;
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "software Developer";
+    color: #820000;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: rgba(0,0,0,0.1);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid rgba(0,0,0,0.1);
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #820000;
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: " Cricket Bats";
+    }
+    21%, 40%{
+        content: " Cricket Balls";
+    }
+    41%, 60%{
+        content: " Protective Gear";
+    }
+    61%, 80%{
+        content: " Accessories";
+    }
+    81%, 100%{
+        content: " Cricket apparels";
+    }
+}
+
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+
+@media(max-width:900px){
+    .home{
+        flex-direction: column;
+        margin: 0rem 0rem;
+    }
+    section.home {
+        padding: 2rem 5%;
+        background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+    }
+    .home-content {
+        text-align: center; /* Konten disejajarkan di tengah */
+    }
+    .home .home-content h3{
+        font-size: 1.5rem;
+    }
+
+    .home-content h1{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .home-img img{
+        width: 100vw;
+        margin-top: 8rem;
+    }
+}
+/* Bagian hero di halaman Services */
+.services {
+    min-height: 100vh; /* Pastikan mencakup seluruh tinggi layar */
+    padding: 5rem 9%;
+    background: url('swimming-bg.jpg') no-repeat center center/cover, 
+                rgba(0, 0, 0, 0.5); /* Gambar dengan overlay transparan */
+    background-blend-mode: overlay; /* Mencampur warna dan gambar */
+    background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+    color: white;
+    text-align: center;
+}
+
+#threeddservices {
+    width: 400px;
+    height: 400px;
+
+
+}
+
+.home.services-home {
+    min-height: 100vh; /* Pastikan mencakup seluruh layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+    background: url('swimming-bg.jpg') no-repeat center center/cover; /* Gambar latar belakang */
+    background-position: center; /* Pastikan gambar berada di tengah */
+    background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+    position: relative;
+    color: var(--light-text); /* Warna teks agar kontras dengan gambar latar */
+    z-index: 1; /* Konten tetap di atas */
+}
+
+.home.services-home::before {
+    content: ''; /* Overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay hitam transparan */
+    z-index: -1; /* Pastikan overlay di belakang konten */
+}
+
+.services-home .home-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.services-home .home-content span {
+    color: #820000;
+}
+
+.services-home .home-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.services-home .home-content p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.service-item {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 25%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.service-item i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #820000;
+}
+.service-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #820000;
+}
+
+.service-item p {
+    font-size: 1.4rem;
+    color: white;
+}
+
+/* Media Query untuk Layar Lebar */
+@media (max-width: 768px) {
+    .service-item {
+        width: 45%;
+    }
+}
+
+@media (max-width: 500px) {
+    .service-item {
+        width: 90%;
+    }
+}
+
+/* Kelas skills-home */
+.skills {
+    min-height: 100vh; /* Pastikan mencakup seluruh tinggi layar */
+    padding: 5rem 9%;
+    background: url('swimming-bg.jpg') no-repeat center center/cover, 
+                rgba(0, 0, 0, 0.5); /* Gambar dengan overlay transparan */
+    background-blend-mode: overlay; /* Mencampur warna dan gambar */
+    background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+    color: white;
+    text-align: center;
+}
+
+#threedd{
+    width: 200px;
+    height: 400px;
+
+}
+.skills-home {
+    min-height: 100vh; /* Pastikan elemen ini mengisi seluruh tinggi layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background: url('swimming-bg.jpg') no-repeat center center/cover; /* Gambar latar belakang */
+    background-position: center; /* Pastikan gambar berada di tengah */
+    background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+    position: relative;
+    color: var(--light-text); /* Warna teks agar kontras dengan gambar latar */
+    z-index: 1; /* Konten tetap di atas */
+}
+
+/* Overlay transparan hitam */
+.skills-home::before {
+    content: ''; /* Overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay hitam transparan */
+    z-index: -1; /* Pastikan overlay di belakang konten */
+}
+
+.skills-home .home-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.skills-home .home-content span {
+    color: #820000;
+}
+
+.skills-home .home-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.skills-home .home-content p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.skill-item {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 25%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.skill-item i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #820000;
+}
+
+.skill-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #820000;
+}
+
+.skill-item p {
+    font-size: 1.4rem;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .skill-item {
+        width: 45%;
+    }
+}
+
+@media (max-width: 500px) {
+    .skill-item {
+        width: 90%;
+    }
+}
+/* Bagian hero di halaman Education */
+.education {
+    min-height: 100vh; /* Pastikan mencakup seluruh tinggi layar */
+    padding: 5rem 9%;
+    background: url('swimming-bg.jpg') no-repeat center center/cover, 
+                rgba(0, 0, 0, 0.5); /* Gambar dengan overlay transparan */
+    background-blend-mode: overlay; /* Mencampur warna dan gambar */
+    background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+    color: white;
+    text-align: center;
+}
+
+.education-home {
+    min-height: 100vh; /* Pastikan elemen ini mengisi seluruh tinggi layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background: url('swimming-bg.jpg') no-repeat center center/cover; /* Gambar latar belakang */
+    background-position: center; /* Pastikan gambar berada di tengah */
+    background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+    position: relative;
+    color: var(--light-text); /* Warna teks agar kontras dengan gambar latar */
+    z-index: 1; /* Konten tetap di atas */
+}
+
+.education-home::before {
+    content: ''; /* Overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay hitam transparan */
+    z-index: -1; /* Pastikan overlay di belakang konten */
+}
+
+.education-home .home-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.education-home .home-content span {
+    color: #820000;
+}
+
+.education-home .home-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.education-home .home-content p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.education-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.education-item {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 25%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.education-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.education-item i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #820000;
+}
+
+.education-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #820000;
+}
+
+.education-item p {
+    font-size: 1.4rem;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .education-item {
+        width: 45%;
+    }
+}
+
+@media (max-width: 500px) {
+    .education-item {
+        width: 90%;
+    }
+}
+/* Bagian hero di halaman Experience */
+.experience {
+    min-height: 100vh; /* Pastikan mencakup seluruh tinggi layar */
+    padding: 5rem 9%;
+    background: url('swimming-bg.jpg') no-repeat center center/cover, 
+                rgba(0, 0, 0, 0.5); /* Gambar dengan overlay transparan */
+    background-blend-mode: overlay; /* Mencampur warna dan gambar */
+    background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+    color: white;
+    text-align: center;
+}
+.experience-home {
+    min-height: 100vh; /* Pastikan elemen ini mengisi seluruh tinggi layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+    background: url('swimming-bg.jpg') no-repeat center center/cover; /* Gambar latar belakang */
+    background-position: center; /* Pastikan gambar berada di tengah */
+    background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+    position: relative;
+    color: var(--light-text); /* Warna teks agar kontras dengan gambar latar */
+    z-index: 1; /* Konten tetap di atas */
+}
+
+.experience-home::before {
+    content: ''; /* Overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay hitam transparan */
+    z-index: -1; /* Pastikan overlay di belakang konten */
+}
+
+.experience-home .home-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.experience-home .home-content span {
+    color: #820000;
+}
+
+.experience-home .home-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.experience-home .home-content p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.experience-item {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 25%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.experience-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.experience-item i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #820000;
+}
+
+.experience-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #820000;
+}
+
+.experience-item p {
+    font-size: 1.4rem;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .experience-item {
+        width: 45%;
+    }
+}
+
+@media (max-width: 500px) {
+    .experience-item {
+        width: 90%;
+    }
+}
+/* Bagian hero di halaman Contact */
+.contact {
+    min-height: 100vh; /* Pastikan mencakup seluruh tinggi layar */
+    padding: 5rem 9%;
+    background: url('swimming-bg.jpg') no-repeat center center/cover, 
+                rgba(0, 0, 0, 0.5); /* Gambar dengan overlay transparan */
+    background-blend-mode: overlay; /* Mencampur warna dan gambar */
+    background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+    color: white;
+    text-align: center;
+}
+.contact-home {
+    min-height: 100vh; /* Pastikan elemen ini mengisi seluruh tinggi layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background: url('swimming-bg.jpg') no-repeat center center/cover; /* Gambar latar belakang */
+    background-position: center; /* Pastikan gambar berada di tengah */
+    background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+    position: relative;
+    color: var(--light-text); /* Warna teks agar kontras dengan gambar latar */
+    z-index: 1; /* Konten tetap di atas */
+}
+
+.contact-home::before {
+    content: ''; /* Overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay hitam transparan */
+    z-index: -1; /* Pastikan overlay di belakang konten */
+}
+
+.contact-container {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom default */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Ubah menjadi 1 kolom */
+        gap: 15px; /* Kurangi jarak antar kolom */
+    }
+}
+
+.contact-item {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 30%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center; /* Untuk memastikan teks berada di tengah */
+    overflow-wrap: break-word; /* Memastikan teks panjang akan terpotong */
+    padding: 10px; /* Beri jarak padding di dalam kotak */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+.contact-item img {
+    width: 80%;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.contact-item i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #820000;
+}
+
+.contact-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #820000;
+}
+
+.contact-item p {
+    margin: 0 auto;
+    line-height: 1.5;
+    word-wrap: break-word;
+    font-size: 1.4rem;
+    color: white;
+}
+
+.contact-form {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 15px;
+    }
+}
+
+.contact-form h3 {
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.contact-form .input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.contact-form label {
+    font-size: 1.4rem;
+    color: white;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.contact-home .btn-container {
+    margin-top: 2rem; /* Tambahkan jarak antara tombol dan paragraf */
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #820000;
+    color: white;
+    font-size: 1.4rem;
+    resize: none;
+}
+
+.contact-form button {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #820000;
+    font-weight: 600;
+    border: 2px solid #820000;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    transform: scale(1.05);
+    background-color: #820000;
+    color: black;
+    box-shadow: 0 0 25px #820000;
+}
+
+.map-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Rasio aspek 16:9 */
+    height: 0;
+    overflow: hidden;
+    border: 1px solid var(--light-text); /* Tambahkan batas untuk estetika */
+    border-radius: 10px; /* Berikan sudut melengkung */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+    .map-container {
+        padding-bottom: 75%; /* Rasio aspek 4:3 untuk layar kecil */
+    }
+}
+/* Parallax Effect with Multiple Layers */
+.parallax-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1px;
+    transform-style: preserve-3d;
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform-origin: center;
+}
+
+.layer1 {
+    background-image: url('images/Layer1.png');
+    transform: translateZ(-1px) scale(2);
+}
+
+.layer2 {
+    background-image: url('images/Layer2.png');
+    transform: translateZ(-0.5px) scale(1.5);
+}
+
+.layer3 {
+    background-image: url('images/Layer3.png');
+    transform: translateZ(0px) scale(1);
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
